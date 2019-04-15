@@ -4,14 +4,14 @@ node {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
-        checkout git
+        checkout git https://github.com/Jtech95/jenkins_test.git
     }
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("getintodevops/hellonode")
+        app = docker.build("jtech95/JenkinsDemoImage")
     }
 
     stage('Test image') {
