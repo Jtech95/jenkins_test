@@ -4,7 +4,7 @@ node {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
-        checkout git https://github.com/Jtech95/jenkins_test.git
+        checkout git
     }
 
     stage('Build image') {
