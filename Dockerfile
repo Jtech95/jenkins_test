@@ -5,7 +5,7 @@ RUN apt-get update
 RUN apt-get -y install apache2
 
 # Install apache and write hello world message
-RUN echo 'Make it so!  <img src=https://memegenerator.net/img/instances/66526139/mission-success.jpg>' > /var/www/html/index.html
+RUN echo '<img src=https://memegenerator.net/img/instances/66526139/mission-success.jpg>' > /var/www/html/index.html
 # RUN echo '<h1>Test</h1>' > /var/www/html/index.html
 
 # Configure apache
