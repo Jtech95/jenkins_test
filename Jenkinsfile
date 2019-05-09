@@ -10,10 +10,10 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        app.inside {
-            sh 'echo "Current user is:"'
-            sh 'whoami'
-        }
+
+        sh 'echo "Current user is:"'
+        sh 'whoami'
+
         app = docker.build("jtech95/jenkinsdemo:${env.BUILD_NUMBER}")
     }
 
