@@ -39,6 +39,6 @@ node {
 
     stage('Deploy to K8') {
         sh 'pwd'
-        kubernetesDeploy configs: 'home/ec2-user/kubeconfiguration.yaml', kubeConfig: [path: ''], kubeconfigId: 'kubernetes_configuration', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+        kubernetesDeploy configs: '../../../../../home/ec2-user/kubeconfiguration.yaml', kubeConfig: [path: ''], kubeconfigId: 'kubernetes_configuration', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
     }
 }
