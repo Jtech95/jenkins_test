@@ -2,22 +2,22 @@ apiVersion: extensions/v1beta1
 
 kind: Deployment
 metadata:
-  name: nginx-deploy
+  name: apache-deployment
   labels:
-    app: nginx
-  namespace: nginx-deployment
+    app: apache
+  namespace: apache-namespace
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      app: apache
   template:
     metadata:
       labels:
-        app: nginx
+        app: apache
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: apache
+        image: jtech95/jenkinsdemo:latest
         ports:
         - containerPort: 80

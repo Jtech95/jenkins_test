@@ -11,10 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        sh 'echo "Current user is:"'
-        sh 'whoami'
-
-        app = docker.build("jtech95/jenkinsdemo:${env.BUILD_NUMBER}")
+        app = docker.build("jtech95/jenkinsdemo:latest")
     }
 
     stage('Test image') {
@@ -38,7 +35,6 @@ node {
     }
 
     stage('Deploy to K8') {
-        sh 'pwd'
         kubernetesDeploy configs: 'KubernetesConfig.yaml', kubeConfig: [path: '/'], kubeconfigId: 'kubernetes_configuration', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
     }
 }
