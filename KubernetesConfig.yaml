@@ -18,8 +18,8 @@ spec:
     spec:
       containers:
       - name: apache
-        # image: jtech95/jenkinsdemo:latest
-        image: k8s.gcr.io/hpa-example
+        image: jtech95/jenkinsdemo:latest
+        # image: k8s.gcr.io/hpa-example
         ports:
         - containerPort: 80
         resources:
