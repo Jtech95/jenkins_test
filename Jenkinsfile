@@ -5,9 +5,11 @@ node {
         /* Let's make sure we have the repository cloned to our workspace */
 
         checkout scm
+        /*
         sh 'whoami'
         sh 'pwd'
         sh 'cp /var/lib/jenkins/config .'
+        */
     }
 
     stage('Build image') {
